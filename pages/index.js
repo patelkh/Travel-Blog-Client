@@ -2,7 +2,6 @@ import React from "react";
 import Splash from "../components/Splash";
 import { GetStaticProps } from "next";
 import BlogList from "../components/BlogList";
-import IndexBlog from "../components/IndexBlog";
 
 export const getStaticProps = async () => {
   const res = await fetch(

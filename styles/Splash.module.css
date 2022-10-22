@@ -2,8 +2,11 @@
   word-wrap: break-word;
   padding: 60px 80px;
   margin-top: 77px;
-  background: -o-linear-gradient(45deg, #a1a5a238, transparent);
-  background: linear-gradient(45deg, #a1a5a238, transparent);
+  background-image: url(../public/images/landscape.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background: -o-linear-gradient(45deg, #a1a5a238, transparent);
+  background: linear-gradient(45deg, #a1a5a238, transparent); */
   border-bottom: 1px solid #4646462e;
 
   @media (max-width: 400px) {
@@ -16,6 +19,7 @@
 }
 
 .h1 {
+  color: white;
   font-size: 4em;
   font-weight: bold;
   line-height: 1em;
@@ -26,6 +30,7 @@
 }
 
 .p {
+  color: aliceblue;
   margin-top: 30px;
   font-weight: light;
   line-height: 1.5em;
