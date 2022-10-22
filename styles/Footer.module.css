@@ -1,0 +1,15 @@
+.footer {
+    height: 30px;
+    background: -o-linear-gradient(45deg, #a1a5a238, transparent);
+    background: linear-gradient(45deg, whitesmoke, transparent);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.p {
+    font-weight: bold;
+    text-align: center;
+
+}
