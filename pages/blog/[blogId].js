@@ -14,7 +14,7 @@ export const getStaticPaths = async () => {
   const data = await res.json()
   const paths = data.map(blog => `/blog/${blog._id}`);
   console.log(`paths: ${paths}`)
-  return {paths, fallback: true}
+  return {paths, fallback: false}
 }
 
 export const getStaticProps = async({params}) => {
