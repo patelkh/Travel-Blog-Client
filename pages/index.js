@@ -1,5 +1,7 @@
 import React from "react";
+import Splash from '../components/Splash'
 import { GetStaticProps } from "next";
+import { SP } from "next/dist/shared/lib/utils";
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -16,7 +18,7 @@ export const getStaticProps = async () => {
 export default function Blog({ blogs }) {
   return (
     <>
-  
+        <Splash/>
     </>
   );
 }
