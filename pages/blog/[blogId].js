@@ -26,7 +26,8 @@ export const getStaticProps = async({params}) => {
   const commentRes = await fetch(`https://kays-travel-blog-api.herokuapp.com/blog/comments/${params.blogId}`)
   const comments = await commentRes.json()
   return {
-    props: {blog, comments}
+    props: {blog, comments},
+    revalidate: 1,
   }
 }
 
