@@ -2,7 +2,7 @@
 * **View frontend App:** https://kays-travel-blog.herokuapp.com<br><br>
 <img width="600" alt="Screen Shot" src="https://user-images.githubusercontent.com/76967126/197347627-1ddb093c-5a00-4bd3-af70-3497c1ac444a.png"><br><br>
 
-# Travel Blog Backend API - MongoDB, Node.js, and Express.js
+# Travel Blog Backend API - MongoDB, Node.js & Express.js
 * **View backend API:** https://kays-travel-blog-api.herokuapp.com/blogs/view <br>
 Sample data: <br>
 {<br>
