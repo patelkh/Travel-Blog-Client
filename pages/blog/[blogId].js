@@ -8,46 +8,47 @@ export default function BlogDetails(props) {
   );
 }
 
+//DO NOT DELETE CODE FOR STATIC SITE GENERATION. NOT IDEAL FOR FETCHING DATA THAT CHANGES OFTEN
 //DYNAMIC ROUTING
-export const getStaticPaths = async () => {
-  const res = await fetch("https://kays-travel-blog-api.herokuapp.com/blogs/view")
-  const data = await res.json()
-  const paths = data.map(blog => `/blog/${blog._id}`);
-  console.log(`paths: ${paths}`)
-  return {paths, fallback: false}
-}
+// export const getStaticPaths = async () => {
+//   const res = await fetch("https://kays-travel-blog-api.herokuapp.com/blogs/view")
+//   const data = await res.json()
+//   const paths = data.map(blog => `/blog/${blog._id}`);
+//   console.log(`paths: ${paths}`)
+//   return {paths, fallback: false}
+// }
 
-export const getStaticProps = async({params}) => {
-  //params={blogId: 'blog._id'} [blogId].js
-  console.log(params) 
-  const res = await fetch(`https://kays-travel-blog-api.herokuapp.com/blog/${params.blogId}`)
-  const blog = await res.json()
-  console.log(blog)
-  const commentRes = await fetch(`https://kays-travel-blog-api.herokuapp.com/blog/comments/${params.blogId}`)
-  const comments = await commentRes.json()
-  return {
-    props: {blog, comments},
-    revalidate: 1,
-  }
-}
+// export const getStaticProps = async({params}) => {
+//   //params={blogId: 'blog._id'} [blogId].js
+//   console.log(params) 
+//   const res = await fetch(`https://kays-travel-blog-api.herokuapp.com/blog/${params.blogId}`)
+//   const blog = await res.json()
+//   console.log(blog)
+//   const commentRes = await fetch(`https://kays-travel-blog-api.herokuapp.com/blog/comments/${params.blogId}`)
+//   const comments = await commentRes.json()
+//   return {
+//     props: {blog, comments},
+//     revalidate: 1,
+//   }
+// }
 
 //DO NOT DELETE CODE FOR SERVER SIDE RENDERING
-// export const getServerSideProps = async (context) => {
-//   const id  = context.query.blogId;
-//   const res = await fetch(
-//     `https://kays-travel-blog-api.herokuapp.com/blog/${id}`
-//   );
-//   const blog = await res.json();
-//   // console.log(blog);
+export const getServerSideProps = async (context) => {
+  const id  = context.query.blogId;
+  const res = await fetch(
+    `https://kays-travel-blog-api.herokuapp.com/blog/${id}`
+  );
+  const blog = await res.json();
+  // console.log(blog);
   
-//   const commentRes = await fetch(
-//     `https://kays-travel-blog-api.herokuapp.com/blog/comments/${id}`
-//   )
-//   const comments = await commentRes.json()
-//   console.log(comments)
+  const commentRes = await fetch(
+    `https://kays-travel-blog-api.herokuapp.com/blog/comments/${id}`
+  )
+  const comments = await commentRes.json()
+  console.log(comments)
   
-//   return {
-//     props: {blog, comments}
-//   };
-// };
+  return {
+    props: {blog, comments}
+  };
+};
 
